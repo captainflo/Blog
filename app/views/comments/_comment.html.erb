@@ -1,5 +1,6 @@
 <div class="bubble">
         <div class="content">
+          <% if false %><p><%= image_tag comment.user.avatar.medium.url %></p><% end %>
           <p class="copy_title"><strong><%= comment.name %></strong></p>
           <p class="copy"><%= comment.body %></p>
         </div>
