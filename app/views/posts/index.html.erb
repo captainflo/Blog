@@ -2,7 +2,9 @@
 <div class="post_wrapper">
   <div class="bubble_attachement">
     <div class="preview">
-      <img src="/images/madmax.jpeg" atl="">
+      <% if @posts.any? %>
+       <%= image_tag post.image.url(:large) %>
+   <% end %>
     </div>
     <div class="content">
       <h2 class="title"><%=link_to post.title, post %></h2>
