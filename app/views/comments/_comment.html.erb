@@ -1,16 +1,16 @@
 <div class="bubble">
-        <div class="content">
-          <% if false %><p><%= image_tag comment.user.avatar.medium.url %></p><% end %>
-          <p class="copy_title"><strong><%= comment.name %></strong></p>
-          <p class="copy"><%= comment.body %></p>
-        </div>
-        <p class="time"><%= Time.zone.now %></p>
+  <div class="content">
+    <p class= "avatarbubble"><%= image_tag comment.user.avatar.medium.url %></p>
+    <p class="copy"><%= comment.body %></p>
+  </div>
+  <p class="time"><%= comment.created_at.strftime("%d %b  %Y at %I:%M%p") %>
+  </p>
 
-        <% if user_signed_in? %>
-        <p><%= link_to 'Delete', [comment.post, comment],
-                        method: :delete,
-                        class: "button_comments",
-                        data: { confirm: 'Are you sure?'} %>
-        </p>
-        <% end %>
-      </div>
+  <% if user_signed_in? && can_edit_comment?(comment)%>
+    <p><%= link_to 'Delete', [comment.post, comment],
+                    method: :delete,
+                    class: "button_comments",
+                    data: { confirm: 'Are you sure?'} %>
+    </p>
+  <% end %>
+</div>

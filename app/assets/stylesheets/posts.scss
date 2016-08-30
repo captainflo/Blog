@@ -43,3 +43,41 @@
   color:#727678;
   line-height: 1.65em;
 }
+
+////////page show ////////
+
+.principal{
+        display: flex;
+        width: auto;
+        height: 456px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .element1{
+        width: auto;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 52px;
+        border-radius: 3px;
+        float: left;
+        font-size: 1.1em;
+  			line-height: 1.75;
+        overflow: auto;
+        padding: 1em;
+      }
+
+      .element{
+        width: auto;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 52px;
+        border-radius: 3px;
+        float: right;
+      }
+
+      img{
+        border-radius: 4px;
+      }

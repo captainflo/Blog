@@ -1,16 +1,16 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+
   def index
     @posts = Post.all.order("created_at DESC")
   end
 
   def new
-    redirect_to root_path unless current_user
     @post = Post.new
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.create(post_params)
     if @post.save
       redirect_to @post
     else
@@ -24,8 +24,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-
-    if @post.update(params[:post].permit(:title, :body))
+    if @post.update(params[:post].permit(:title, :body, :image))
       redirect_to @post
     else
       render 'edit'
@@ -39,14 +38,12 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-
     redirect_to posts_path
   end
 
   private
+
   def post_params
     params.require(:post).permit(:title, :body, :image)
   end
-
-
 end
