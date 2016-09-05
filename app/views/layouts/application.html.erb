@@ -10,31 +10,8 @@
   </head>
 
   <body>
-    <div id="sidebar">
-      <div id="logo">
-        <%= link_to root_path do %>
-        <%= image_tag "logo.svg"%>
-        <% end %>
-      </div>
-
-      <ul>
-        <li class="category">Website</li>
-        <li><%= link_to"Blog", root_path %></li>
-        <li><%= link_to"About", about_path %></li>
-      </ul>
-
-      <ul>
-        <li class="category">Social</li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Email</a></li>
-      </ul>
-
-      <% if !user_signed_in? %>
-      <p class="sign_in">Admin Login</p>
-      <% end %>
-    </div>
+    <% if controller_name != "pages" || action_name == 'about' || action_name == 'video' %>
+    <%= render partial: 'layouts/sidebar' %>
 
     <div id="main_content">
       <div id="header">
@@ -66,7 +43,7 @@
       <% flash.each do |name, msg| %>
         <%= content_tag(:div, msg, class: "alert") %>
       <% end %>
-
+      <% end %>
       <%= yield %>
 
 </div>

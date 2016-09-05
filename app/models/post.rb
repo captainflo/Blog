@@ -9,6 +9,4 @@ class Post < ApplicationRecord
 
   belongs_to :user # => user_id dans Posts
 
-  has_many :messages, dependent: :destroy
-
 end

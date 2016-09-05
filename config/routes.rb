@@ -8,5 +8,7 @@ end
 root "posts#index"
 
 get '/about', to: 'pages#about'
+get '/topmovies', to: 'pages#topmovies'
+get 'video' => 'pages#video'
 
 end

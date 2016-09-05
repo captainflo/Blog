@@ -1,0 +1,181 @@
+<div class="topmovies">
+<div class="main">
+  <div class="sidebar-hover">
+    <% if !user_signed_in? %>
+    <p class="pagination1"><%= link_to "Sign In", new_user_session_path %></p>
+    <p class="pagination2"><%= link_to "Sign Up", new_user_registration_path %></p>
+    <% else %>
+    <%= link_to edit_user_registration_path do %>
+    <%= image_tag current_user.avatar.medium.url, class: "avatar_nav" if current_user.avatar.url %>
+    <% end %>
+    <p class="pagination1"><%= link_to "New Post", new_post_path %></p>
+    <p class="pagination2"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
+    <% end %>
+
+    <p class="pagination3"><%= link_to "Blog", root_path %></p>
+    <p class="pagination4"><%= link_to "Video", video_path %></p>
+
+    <p class="pagination">
+      <span class="page">Movies</span> / <span class="total-pages">08</span>
+    </p>
+  </div>
+
+  <div class="sidebar-real">
+    <div data-page="1" class="nav-elem nav-1 active"></div>
+    <div data-page="2" class="nav-elem nav-2"></div>
+    <div data-page="3" class="nav-elem nav-3"></div>
+    <div data-page="4" class="nav-elem nav-4"></div>
+    <div data-page="5" class="nav-elem nav-5"></div>
+    <div data-page="6" class="nav-elem nav-6"></div>
+    <div data-page="7" class="nav-elem nav-7"></div>
+    <div data-page="8" class="nav-elem nav-8"></div>
+  </div>
+  <div class="sections">
+    <div class="section section-1">
+      <div class="left-part">
+        <%= image_tag "suicide-squad-movie-2016-poster.jpeg", class: "topmovies" %>
+      </div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <h2 class="section-heading"><a href="/posts/3">Suicide Squad<a/></h2>
+        <p class="additional-text">Fearing that the world is vulnerable to otherworldly threats,
+        the Government enlists the disposable Task Force X on a high-risk mission in exchange for
+         absolution: Meanwhile, the Joker operates his own agenda.</p>
+      </div>
+    </div>
+    <div class="section section-2">
+      <div class="left-part">
+        <%= image_tag "mad-max-poster.jpg", class: "topmovies" %>
+      </div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <h2 class="section-heading"><a href="/posts/1">Mad Maxmad Fury Road</a></h2>
+        <p class="additional-text">
+        A woman rebels against a tyrannical ruler in
+        postapocalyptic Australia in search for her home-land with the help of a
+        group of female prisoners, a psychotic worshipper, and a drifter named Max.</p>
+      </div>
+    </div>
+    <div class="section section-3">
+      <div class="left-part">
+        <%= image_tag "img1.jpeg", class: "topmovies" %>
+      </div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <h2 class="section-heading" href="/posts/2">Avatar</h2>
+        <p class="additional-text">A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.</p>
+      </div>
+    </div>
+    <div class="section section-4">
+      <div class="left-part">
+        <%= image_tag "star wars.jpg", class: "topmovies" %>
+      </div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <h2 class="section-heading"><a href="/posts/2">Star Wars : Episode VII</a></h2>
+        <p class="additional-text">Three decades after the defeat of the Galactic Empire, a new threat arises. The First Order attempts to rule the galaxy and only a ragtag group of heroes can stop them, along with the help of the Resistance.</p>
+      </div>
+    </div>
+    <div class="section section-5">
+      <div class="left-part">
+        <%= image_tag "avanger.jpg", class: "topmovies" %>
+      </div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <h2 class="section-heading">Avengers</h2>
+        <p class="additional-text">Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.</p>
+      </div>
+    </div>
+    <div class="section section-6">
+      <div class="left-part">
+        <%= image_tag "hobbit.jpg", class: "topmovies" %>
+      </div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <h2 class="section-heading">The Hobbit</h2>
+        <p class="additional-text">Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness.</p>
+      </div>
+    </div>
+    <div class="section section-7">
+      <div class="left-part">
+        <%= image_tag "backfutur.jpg", class: "topmovies" %>
+      </div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <h2 class="section-heading">Back to the Future</h2>
+        <p class="additional-text">Marty McFly, a 17-year-old high school student, is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown.</p>
+      </div>
+    </div>
+    <div class="section section-8">
+      <div class="left-part">
+        <%= image_tag "hr_Posters_1.jpg", class: "topmovies" %>
+      </div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <h2 class="section-heading"><a href="http://codepen.io/suez/public/" target="_blank">The Dark Night</a></h2>
+        <p class="check-out additional-text"> When the menace known as the Joker
+        wreaks havoc and chaos on the people of Gotham, the caped crusader must
+        come to terms with one of the greatest psychological tests of his ability
+        to fight injustice.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
